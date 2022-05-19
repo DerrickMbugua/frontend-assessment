@@ -14,6 +14,7 @@ import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import { AiFillEdit, AiFillDelete, AiFillSave, AiOutlineUser } from 'react-icons/ai'
 import './user.css'
+import { Link } from 'react-router-dom'
 
 
 const User = () => {
@@ -36,8 +37,10 @@ const User = () => {
       <Grid container justifyContent={'center'}>
         <Grid item xs={10} md={8}>
           <Card>
+            <Link to="/create">
+              <Button className='btn__create' variant={'outlined'} startIcon={<AiFillSave />}>Create</Button>
+            </Link>
 
-            <Button className='btn__create' variant={'outlined'} startIcon={<AiFillSave />}>Create</Button>
 
 
             <TableContainer>
@@ -71,8 +74,10 @@ const User = () => {
                       </TableCell>
                       <TableCell>
                         <div className='btn'>
+                          <Link to={`/${user.id}`}>
+                            <Button variant={'outlined'} startIcon={<AiFillEdit />}>Edit</Button>
+                          </Link>
 
-                          <Button variant={'outlined'} startIcon={<AiFillEdit />}>Edit</Button>
 
                           <Button variant={'outlined'} startIcon={<AiFillDelete />}>Delete</Button>
 
