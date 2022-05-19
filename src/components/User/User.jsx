@@ -15,10 +15,12 @@ import Box from "@mui/material/Box"
 import { AiFillEdit, AiFillDelete, AiFillSave, AiOutlineUser } from 'react-icons/ai'
 import './user.css'
 import { Link } from 'react-router-dom'
-
+import {useParams} from "react-router-dom"
 
 const User = () => {
   const [users, setUsers] = useState([])
+
+  const {id} = useParams()
 
   useEffect(() => {
     fetch(`https://crud-backend-assessment.herokuapp.com/users`)
@@ -29,6 +31,16 @@ const User = () => {
         }
       )
   }, [])
+
+  const handleClick = (id) => {
+
+    fetch('https://crud-backend-assessment.herokuapp.com/users/' + id, {
+        method: 'DELETE',
+        
+    }).then(() => {
+        alert('User deleted' + id)     
+    })
+};
 
 
   return (
@@ -78,9 +90,8 @@ const User = () => {
                             <Button variant={'outlined'} startIcon={<AiFillEdit />}>Edit</Button>
                           </Link>
 
-
-                          <Button variant={'outlined'} startIcon={<AiFillDelete />}>Delete</Button>
-
+                          <Button variant={'outlined'} onClick={()=>handleClick(user.id)} startIcon={<AiFillDelete />}>Delete</Button>
+                          
 
                         </div>
 
