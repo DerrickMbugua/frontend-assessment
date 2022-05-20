@@ -50,7 +50,7 @@ const Edit = () => {
 
     return (
         <div className="create">
-            <h2>Add a new User</h2>
+            <h2>Update a new User</h2>
             <form onSubmit={handleSubmit}>
                 <label>Name:</label>
                 <input
