@@ -34,7 +34,7 @@ const Edit = () => {
             department: event.target.value,
         }))
     }
-
+//updating a user using the backend endpoint
     const handleSubmit = (e) => {
         e.preventDefault()
 
@@ -47,7 +47,7 @@ const Edit = () => {
             console.log(JSON.stringify(values))
         })
     };
-
+//returns a form where the user can update a user
     return (
         <div className="create">
             <h2>Update a new User</h2>

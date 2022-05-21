@@ -4,6 +4,7 @@ import Form from './components/User/create'
 import Edit from './components/User/edit'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
+//route, switch allows one to go to another page
 function App() {
   return (
     <Router>

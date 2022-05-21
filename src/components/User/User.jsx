@@ -21,7 +21,7 @@ const User = () => {
   const [users, setUsers] = useState([])
 
   const {id} = useParams()
-
+//fetching all users from the backend endpoint
   useEffect(() => {
     fetch(`https://crud-backend-assessment.herokuapp.com/users`)
       .then(response => response.json())
@@ -31,7 +31,7 @@ const User = () => {
         }
       )
   }, [])
-
+//deleting a user from the backend endpoint
   const handleClick = (id) => {
 
     fetch('https://crud-backend-assessment.herokuapp.com/users/' + id, {
@@ -42,7 +42,7 @@ const User = () => {
     })
 };
 
-
+//returns a table which shows users
   return (
     <Box textAlign={'center'}>
       <Typography fontSize={60} fontWeight={'lighter'}>users</Typography>
